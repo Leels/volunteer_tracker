@@ -1,8 +1,11 @@
 class Volunteer
-  attr_accessor
+  attr_reader :id
+  attr_accessor :name, :hours
 
-  def initialize()
-    @
+  def initialize(attributes)
+    @name = attributes.fetch(:name)
+    @id = attributes.fetch(:id)
   end
 
+ 
 end

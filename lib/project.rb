@@ -30,7 +30,7 @@ class Project
     result = DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
     @id = result.first().fetch("id").to_i
   end
-
+#
   def self.find(id)
   project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
   title = project.fetch("title")
@@ -42,17 +42,9 @@ def delete
   DB.exec("DELETE FROM projects WHERE id = #{@id};")
 end
 
-def update(title)
-  @title = title
+def update(attributes)
+  @title = attributes.fetch(:title)
   DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
-end
-
-def self.title(title)
-  DB.exec("SELECT title FROM projects WHERE title = #{title};")
-end
-
-def self.id(id)
-  DB.exec("SELECT id FROM projects WHERE id = #{id};")
 end
 
 end
