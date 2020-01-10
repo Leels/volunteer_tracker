@@ -4,7 +4,7 @@ class Project
 
   def initialize(attributes)
     @title = attributes.fetch(:title)
-    @id = attributes.fetch(:id).to_i
+    @id = attributes.fetch(:id)
   end
 
   def self.all()
@@ -32,19 +32,19 @@ class Project
   end
 
   def self.find(id)
-  project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
-  title = project.fetch("title")
-  id = project.fetch("id").to_i
-  Project.new({:title => title, :id => id})
-end
+    project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
+    title = project.fetch("title")
+    id = project.fetch("id")
+    Project.new({:title => title, :id => id})
+  end
 
-def delete
-  DB.exec("DELETE FROM projects WHERE id = #{@id};")
-end
+  def delete
+    DB.exec("DELETE FROM projects WHERE id = #{@id};")
+  end
 
-def update(attributes)
-  @title = attributes.fetch(:title)
-  DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
-end
+  def update(attributes)
+    @title = attributes.fetch(:title)
+    DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
+  end
 
 end
