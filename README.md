@@ -2,7 +2,7 @@
 ## By: Lela Smith
 
 ### Description
-#### Volunteer and project tracker for fictional non-profit using SQL database. This project allows non-profit employees to add projects to a database where they can view, add, update and delete projects. They also will be able to add volunteers to the database and can add them to projects. The database will also keep track of how many hours volunteers work on a project. 
+#### Volunteer and project tracker for fictional non-profit using SQL database. This project allows non-profit employees to add projects to a database where they can view, add, update and delete projects. They also will be able to add volunteers to the database and can add them to projects. The database will also keep track of how many hours volunteers work on a project.
 
 ### Specs
 |HTTP verb|Route|CRUD Action|Description|
@@ -39,7 +39,7 @@
 * Ruby
 * Bootstrap
 * Sinatra
-* SQL
+* PostgreSQL
 
 ### License
 #### This software is licensed under the MIT license.

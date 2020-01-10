@@ -1,5 +1,6 @@
 class Project
-  attr_accessor :title, :id
+  attr_accessor :title
+  attr_reader :id
 
   def initialize(attributes)
     @title = attributes.fetch(:title)
@@ -10,9 +11,9 @@ class Project
     returned_projects = DB.exec("SELECT * FROM projects;")
     projects = []
     returned_projects.each() do |project|
-      title = project.fetch("title")
       id = project.fetch("id").to_i
-      projects.push(Project.new({:title => title, :id => id}))
+      title = project.fetch("title")
+      projects.push(Project.new({:id => id, :title => title}))
     end
     projects
   end
@@ -23,6 +24,11 @@ class Project
     else
       false
     end
+  end
+
+  def save
+    result = DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
+    @id = result.first().fetch("id").to_i
   end
 
 end

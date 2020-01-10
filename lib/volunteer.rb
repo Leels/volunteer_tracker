@@ -1,4 +1,4 @@
-class Volunteers
+class Volunteer
   attr_accessor
 
   def initialize()
