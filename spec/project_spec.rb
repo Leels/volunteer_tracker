@@ -13,18 +13,18 @@ describe Project do
     end
   end
 
-  # context '#id' do
-  #   it 'returns the id of the project before saving project' do
-  #     project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
-  #     expect(project.id).to eq nil
-  #   end
-  #
-  #   it 'returns the id of the project after saving project' do
-  #     project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
-  #     project.save
-  #     expect(project.id).to be_an_instance_of Integer
-  #   end
-  # end
+  context '#id' do
+    it 'returns the id of the project before saving project' do
+      project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+      expect(project.id).to eq nil
+    end
+
+    # it 'returns the id of the project after saving project' do
+    #   project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+    #   project.save
+    #   expect(project.id).to be_an_instance_of Integer
+    # end
+  end
 
   describe '#==' do
     it 'is the same project if two projects have the same title' do
@@ -85,7 +85,7 @@ describe Project do
   #     expect(project.title).to eq 'Teaching Ruby to Kids'
   #   end
   # end
-#
+
   context '#delete' do
     it 'allows a user to delete a project' do
       project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
