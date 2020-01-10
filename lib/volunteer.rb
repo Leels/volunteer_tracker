@@ -31,4 +31,13 @@ class Volunteer
     (self.name() == volunteer_to_compare.name()) && (self.project_id() == volunteer_to_compare.project_id())
   end
 
+  def self.find(id)
+  volunteer = DB.exec("SELECT * FROM volunteers WHERE id = #{id};").first
+  name = volunteer.fetch("name")
+  hours = volunteer.fetch("hours").to_f
+  project_id = volunteer.fetch("project_id").to_i
+  id = volunteer.fetch("id").to_i
+  Volunteer.new({:name => name, :hours => hours, :project_id => project_id, :id => id})
+end
+
 end
