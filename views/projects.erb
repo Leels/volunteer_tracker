@@ -1,0 +1,15 @@
+<h2>Database for project and volunteer tracking.</h2>
+<h3>View a list of current projects below and add new projects to the database.</h3>
+
+<h3>Active Projects</h3>
+<% if @projects.any? %>
+<ul>
+  <% @projects.each do |project| %>
+  <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are currently no active projects to display.</p>
+<% end %>
+
+<a href="/index/new">Add a new project</a>
