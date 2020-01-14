@@ -1,4 +1,3 @@
-Learn more or give us feedback
 require 'capybara/rspec'
 require './app'
 require 'pry'
