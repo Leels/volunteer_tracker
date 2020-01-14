@@ -27,9 +27,13 @@
 #### None
 
 ### Setup
+* Download Postgres
 * Clone this repository:
 * from  _C:\Users\exampleUser\exampleCloneLocation\example-project-title>_
 1. $ bundle install
+2. $ createdb volunteer_tracker
+3. $ psql volunteer_tracker < database_backup.sql
+4. $ createdb -T volunteer_tracker volunteer_tracker_test
 2. $ ruby app.rb
 
 ### Technologies Used
