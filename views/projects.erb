@@ -1,7 +1,6 @@
-<h2>Database for project and volunteer tracking.</h2>
-<h3>View a list of current projects below and add new projects to the database.</h3>
+<h2><center>View a list of current projects below and add new projects to the database.</center></h2>
 
-<h3>Active Projects</h3>
+<h3>Active Projects:</h3>
 <% if @projects.any? %>
 <ul>
   <% @projects.each do |project| %>
@@ -12,12 +11,11 @@
 <p>There are currently no active projects to display.</p>
 <% end %>
 
-<h4>Add a new project:</h4>
+<h4>Add a New Project:</h4>
 
 <form action="/projects" method="post">
   <div class="form-group">
-    <label for="title">Project Title:</label>
-    <input name="title" class="form-control" type="text">
+    <input name="title" class="form-control" type="text" placeholder="Project Title">
   </div>
-  <button type="submit" class="btn btn-success">Create Project</button>
+  <button type="submit" class="btn">Create Project</button>
 </form>

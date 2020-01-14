@@ -10,7 +10,7 @@ DB = PG.connect({:dbname => "volunteer_tracker"})
 
 get('/') do
   @projects = Project.all
-    erb(:projects)
+  erb(:projects)
 end
 
 post('/projects/:id/volunteers') do
@@ -44,52 +44,47 @@ get('/') do
   erb(:projects)
 end
 
-  get('/projects') do
-      @projects = Project.all
-    erb(:projects)
-  end
+get('/projects') do
+  @projects = Project.all
+  erb(:projects)
+end
 
-  # get('/projects/new') do
-  #   erb(:new_project)
-  # end
+# get('/projects/new') do
+#   erb(:new_project)
+# end
 
-  post('/projects') do
-    title = params[:title]
-    project = Project.new({:title => title, :id => nil})
-    project.save()
-    @projects = Project.all()
-    erb(:projects)
-  end
+post('/projects') do
+  title = params[:title]
+  project = Project.new({:title => title, :id => nil})
+  project.save()
+  @projects = Project.all()
+  erb(:projects)
+end
 
-  get('/projects/:id') do
-    @project = Project.find(params[:id].to_i())
-    if @project == nil
-      erb(:go_back)
-    else
-      erb(:project)
-    end
+get('/projects/:id') do
+  @project = Project.find(params[:id].to_i())
+  if @project == nil
+    erb(:go_back)
+  else
+    erb(:project)
   end
+end
 
-  get('/projects/:id/edit') do
-    @project = Project.find(params[:id].to_i())
-    erb(:edit_project)
-  end
+get('/projects/:id/edit') do
+  @project = Project.find(params[:id].to_i())
+  erb(:edit_project)
+end
 
-  patch('/projects/:id') do
-    if params[:buy]
-      @project = Project.find(params[:id].to_i())
-      @project.sold
-    else
-      @project = Project.find(params[:id].to_i())
-      @project.update(params[:name])
-    end
-    @projects = Project.all
-    erb(:projects)
-  end
+patch('/projects/:id') do
+  @project = Project.find(params[:id].to_i())
+  @project.update(params[:title])
+  @projects = Project.all
+  erb(:projects)
+end
 
-  delete('/projects/:id') do
-    @project = Project.find(params[:id].to_i())
-    @project.delete()
-    @projects = Project.all
-    erb(:projects)
-  end
+delete('/projects/:id') do
+  @project = Project.find(params[:id].to_i())
+  @project.delete()
+  @projects = Project.all
+  erb(:projects)
+end

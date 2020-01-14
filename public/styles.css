@@ -1,32 +1,25 @@
 body {
-  background-image: url("https://i.ebayimg.com/images/g/n94AAOSwPVFcMUF~/s-l300.jpg");
-  font-family: 'Playfair Display', serif;
-  color: #000080;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqTnZnsg7EN9R_pzQMu7Oteq2v7a0i8vW1d4pz5YvdkHG82Q2qeQ&s");
+  font-family: 'Quicksand', sans-serif;
+  color: #00004d;
 }
 
 h1 {
   font-weight: 700;
-  font-style: italic;
+  text-align: center;
 }
 
-/* .card {
-  background-color: #e6f2ff;
-  min-height: 500px;
+.card {
+  background-color:  #cce6ff;
+  min-height: 400px;
   padding: 40px;
-  border: solid 4px #000080;
+  padding-top: 20px;
+  border: solid;
+  border-radius: 6px;
 }
 
 .jumbotron {
-  background-color: #e6f2ff;
-  border: solid 4px #000080;
+  margin-top: 40px;
+  background-color:  #cce6ff;
+  border: solid;
 }
-
-form.access {
-  float: left;
-  padding: 0 4px;
-}
-
-.form-group {
-  display: flex;
-  justify-content: center;
-} */
