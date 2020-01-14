@@ -1,0 +1,32 @@
+body {
+  background-image: url("https://i.ebayimg.com/images/g/n94AAOSwPVFcMUF~/s-l300.jpg");
+  font-family: 'Playfair Display', serif;
+  color: #000080;
+}
+
+h1 {
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* .card {
+  background-color: #e6f2ff;
+  min-height: 500px;
+  padding: 40px;
+  border: solid 4px #000080;
+}
+
+.jumbotron {
+  background-color: #e6f2ff;
+  border: solid 4px #000080;
+}
+
+form.access {
+  float: left;
+  padding: 0 4px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+} */

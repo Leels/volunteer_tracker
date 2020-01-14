@@ -49,9 +49,9 @@ end
     erb(:projects)
   end
 
-  get('/projects/new') do
-    erb(:new_project)
-  end
+  # get('/projects/new') do
+  #   erb(:new_project)
+  # end
 
   post('/projects') do
     title = params[:title]
